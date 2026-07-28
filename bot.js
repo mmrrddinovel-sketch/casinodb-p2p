@@ -216,3 +216,11 @@ bot.command('freeze_insurance', async (ctx) => {
 });
 
 bot.launch();
+// Принудительно открываем порт для Render
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Bot is running');
+}).listen(3000, () => {
+  console.log('Bot is alive on port 3000');
+});p
